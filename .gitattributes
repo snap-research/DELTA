@@ -1,0 +1,2 @@
+resources/viser_records/recording_parkour.viser filter=lfs diff=lfs merge=lfs -text
+resources/viser_records/recording_tortoise_swim.viser filter=lfs diff=lfs merge=lfs -text
