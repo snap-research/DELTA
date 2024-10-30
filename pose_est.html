@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Pose Estimation</title>
+  <link href="./files/style.css" rel="stylesheet">
+  <!-- <link rel="icon" href="icons/demon_logo_transparent.png" type="image/png"> -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <style>
+    body {
+      padding: 2em;
+      font-family: sans-serif;
+    }
+
+    iframe {
+      border-radius: 0.5em;
+      width: 40em;
+      height: 40em;
+      border: none;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 100%;
+        height: 30em;
+      }
+    }
+
+    a,
+    a:link {
+      color: #777;
+    }
+
+    /* Styles for the instruction icons and text */
+    .instructions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2em;
+      text-align: center;
+      padding: 1em;
+    }
+
+    .instruction-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      font-size: 1.5em;
+    }
+
+    .instruction-item img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .instructions_small {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5em;
+      text-align: center;
+      padding: 0.75em;
+    }
+    .instruction-item_small {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      font-size: 1.25em;
+    }
+
+    .instruction-item_small img {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+  <title>Monst3r Results</title>
+</head>
+
+<body>
+  <div>
+    <center>
+      <h3 class="title is-3"> Pose estimation on in-the-wild videos.
+    </center>
+  </div>
+  <!-- Updated prominent message-->
+  <!-- <p style="text-align: center; font-size: 1.2em; padding: 0em; font-weight: bold;">
+    Please click on other pages to see more results
+  </p> -->
+
+
+  <!-- <div style="text-align: center; padding: 1em">
+    <a href="page1.html">Page 1</a>
+    &nbsp;&bull;&nbsp;
+    <a href="page2.html">Page 2</a>
+    &nbsp;&bull;&nbsp;
+    <strong>Page 3</strong>
+  </div> -->
+
+  <!-- Add downsampling note -->
+  <p style="text-align: center; font-size: 1em; padding: 0em; color: #555;">
+    (It may take <strong>1-2 minutes</strong> to load the interactive visualization)
+  </p>
+
+  <div id="wrapper" style="
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+      ">
+    <iframe
+      src="https://snap-research.github.io/DELTA/build/?playbackPath=https://snap-research.github.io/DELTA/resources/viser_records/recording_car-roundabout.viser&initDistanceScale=0.3&initHeightOffset=0.1">
+    </iframe>
+    <iframe
+      src="https://snap-research.github.io/DELTA/build/?playbackPath=https://snap-research.github.io/DELTA/resources/viser_records/recording_horsejump-high.viser&initDistanceScale=0.3&initHeightOffset=0.1">
+    </iframe>
+    <iframe
+      src="https://snap-research.github.io/DELTA/build/?playbackPath=https://snap-research.github.io/DELTA/resources/viser_records/recording_parkour.viser&initDistanceScale=0.3&initHeightOffset=0.1">
+    </iframe>
+    <iframe
+      src="https://snap-research.github.io/DELTA/build/?playbackPath=https://snap-research.github.io/DELTA/resources/viser_records/recording_dog.viser&initDistanceScale=0.3&initHeightOffset=0.1">
+    </iframe>
+    <iframe
+      src="https://snap-research.github.io/DELTA/build/?playbackPath=https://snap-research.github.io/DELTA/resources/viser_records/recording_tortoise_swim.viser&initDistanceScale=0.3&initHeightOffset=0.1">
+    </iframe>
+  </div>
+</body>
+
+</html>

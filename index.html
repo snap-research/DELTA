@@ -1,0 +1,497 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>DELTA: Dense Efficient Long-range 3D Tracking for Any video</title>
+  <link href="./files/style.css" rel="stylesheet">
+  <!-- <link rel="icon" href="icons/demon_logo_transparent.png" type="image/png"> -->
+  <!-- <link rel="stylesheet" href="./static/css/bulma-carousel.min.css"> -->
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="./files/jquery.mlens-1.0.min.js"></script>
+  <script type="text/javascript" src="./files/jquery.js"></script>
+  <style>
+    .divider {
+      border-right: 2px dashed #737373;
+      width: 2px;
+    }
+  </style>
+  <style>
+    .divider_horizontal {
+      border-top: 2px dashed #737373;
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+    }
+  </style>
+
+<style>
+  body {
+    padding: 2em;
+    font-family: sans-serif;
+  }
+
+  iframe {
+    border-radius: 0.5em;
+    width: 27.5em;
+    height: 27.5em;
+    border: none;
+    box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 768px) {
+    iframe {
+      width: 100%;
+      height: 30em;
+    }
+  }
+
+  a,
+  a:link {
+    color: #777;
+  }
+
+  /* Styles for the instruction icons and text */
+  .instructions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.2em;
+    text-align: center;
+    padding: 0.6em;
+  }
+
+  .instruction-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1.2em;
+  }
+
+  .instruction-item img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .instructions_small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    text-align: center;
+    padding: 0.5em;
+  }
+
+  .instruction-item_small {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    font-size: 1.0em;
+  }
+
+  .instruction-item_small img {
+    width: 30px;
+    height: 30px;
+  }
+</style>
+  
+</head>
+
+<body>
+  <div class="content">
+    <h1 style="line-height: 0.75;">
+      <!-- <img src="./icons/demon_logo_transparent.png" alt="D3Mon Icon" style="width: 48px; vertical-align: middle;"> -->
+      <!-- <strong><span style="color:rgb(255, 195, 21);">DELTA:</span> Dense Long-range 3D Tracking</strong> -->
+      <strong>DELTA: Dense Efficient Long-range <br><br> 3D Tracking for Any video</strong>
+    </h1>    
+    <p id="authors">
+      <span>
+        <a href="https://ngoductuanlhp.github.io//">Tuan Duc Ngo<sup>1,2</sup></a>
+      </span>
+      <span>
+        <a href="https://payeah.net/">Peiye Zhuang<sup>1</sup></a>
+      </span>
+      <span>
+        <a href="https://people.csail.mit.edu/ganchuang/">Chuang Gan<sup>2,4</sup></a>
+      </span>
+      <span>
+        <a href="https://kalo-ai.github.io/">Evangelos Kalogerakis<sup>2,3</sup></a>
+      </span>
+      <span>
+        <a href="http://www.stulyakov.com/">Sergey Tulyakov<sup>1</sup></a>
+      </span>
+      <span>
+        <a href="http://hsinyinglee.com/">Hsin-Ying Lee<sup>1</sup></a>
+      </span>
+        <a href="https://mightychaos.github.io/">Chaoyang Wang<sup>1</sup></a>
+      </span>
+      <br>
+      <span class="institution">
+        <a href="https://research.snap.com/"><sup>1</sup> Snap Inc</a> 
+        <a href="https://www.cics.umass.edu/"><sup>2</sup> UMass Amherst</a>
+        <a href="https://www.ece.tuc.gr/en/home"><sup>3</sup> TU Crete</a> 
+        <a href="https://mitibmwatsonailab.mit.edu/"><sup>4</sup> MIT-IBM Watson AI Lab</a>
+      </span>
+    </p>
+
+    <font size="+2">
+      <p style="text-align: center;">
+        <a href="files\paper.pdf" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://arxiv.org/abs/xxx" target="_blank">[Arxiv (soon)]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/xxx" target="_blank">[Code (soon)]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="files/bibtex.txt" target="_blank">[BibTeX]</a>
+      </p>
+    </font>
+
+    <br>
+
+    <center>
+      <div class="video-container">
+      <video class='round' autoplay muted loop playsinline style='width: 800px' src='resources/demo_trajs/car-roundabout_traj_concat.mp4'></video>
+      </div>
+    </center>
+    
+    <br>
+  
+    <center>
+      <div class="video-container">
+      <video class='round' autoplay muted loop playsinline style='width: 800px' src='resources/demo_trajs/butterfly_traj_concat.mp4'></video>
+      </div>
+    </center>
+    
+    <br>
+
+    <center>
+      <div class="video-container">
+      <video class='round' autoplay muted loop playsinline style='width: 800px' src='resources/demo_trajs/tortoise_swim.mp4'></video>
+      </div>
+    </center>
+    
+    <br>
+
+    <center>
+      <div class="video-container">
+      <video class='round' autoplay muted loop playsinline style='width: 800px' src='resources/demo_trajs/yellow-duck.mp4'></video>
+      </div>
+    </center>
+    
+
+    <a style="text-align:center">
+      <p> 
+        <center>
+          </strong><strong>DELTA</strong> captures <strong>dense, 3D, long-range</strong> trajectories from casual in-the-wild videos in a <strong>feed-forward</strong> manner. 
+        </center>
+      </p>
+    </a>
+
+    
+  </div>
+
+
+  <!-- <div class="content">
+    <h2 style="text-align:left;">Intro Video (1min)</h2>
+    <video width="100%" controls>
+      <source src="./resources/video_1min.mp4" type="video/mp4">
+    </video>
+  </div> -->
+
+  
+
+  <div class="content">
+    <h2 style="text-align:left;">Abstract</h2>
+    <font size="-0.">
+      <p>
+          Tracking dense 3D motion from monocular videos remains challenging, particularly 
+          when aiming for pixel-level precision over long sequences. We introduce DELTA, 
+          a novel method that efficiently tracks every pixel in 3D space, enabling accurate 
+          motion estimation across entire videos. Our approach leverages a joint
+          global-local attention mechanism for reduced-resolution tracking, followed by a
+          transformer-based upsampler to achieve high-resolution predictions. Unlike existing 
+          methods, which are limited by computational inefficiency or sparse tracking,
+          DELTA delivers dense 3D tracking at scale, running over 8x faster than
+          previous methods while achieving state-of-the-art accuracy. Furthermore, we explore
+          the impact of depth representation on tracking performance and identify
+          log-depth as the optimal choice. Extensive experiments demonstrate the superiority 
+          of DELTA on multiple benchmarks, achieving new state-of-the-art results in
+          both 2D and 3D dense tracking tasks. Our method provides a robust solution for
+          applications requiring fine-grained, long-term motion tracking in 3D space.
+    </p>
+  </font>
+  </div>
+
+  <div class="content">
+    <h2 style="text-align:left;">Motivation</h2>
+    <img class="summary-img" src="./resources/limit_motions.png" style="width:80%;margin-bottom: -10px;">
+    <br>
+    <p> Existing feed-forward motion prediction methods struggle with short-term and sparse predictions and often fail to deliver accurate 3D motion estimations while optimization-based approaches require substantial time to process a single video.
+      We are the first method capable of <strong>efficiently</strong> tracking <strong>every pixel</strong> in <strong>3D space</strong> over <strong>hundreds of frames</strong> from monocular videos.
+    </p>
+  </div>
+
+  <div class="content">
+    <h2 style="text-align:left;">Method</h2>
+    <img class="summary-img" src="./resources/arch.png" style="width:100%;margin-bottom: -10px;">
+    <br>
+    <br>
+    <p>
+      DELTA takes RGB-D videos as input and achieves efficient dense
+    3D tracking using a coarse-to-fine strategy, beginning with coarse tracking through a <strong>spatio-temporal
+      attention</strong> mechanism at reduced resolution, followed by an <strong>attention-based upsampler</strong>
+    for high-resolution predictions.
+    </p>
+  </div>
+
+  <div class="content">
+    <!-- <h2 style="text-align:left;">Dense 3D Tracking in synthetic and in-the-wild videos</h2> -->
+    <h2 style="text-align:left;">More results</h2>
+        <div id="myCarousel" class="carousel slide">
+          <!-- Indicators -->
+
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <!-- <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li> -->
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+
+            <!-- <div class="item active">
+              <table align=center width=900px>
+                <tr>
+                    <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/demo_trajs/tortoise_traj_concat.mp4'></video>
+                </tr>
+                <tr>
+                    <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/demo_trajs/kite-surf_traj_concat.mp4'></video>
+                </tr>
+              </table>
+            </div> -->
+            <div class="item active">
+              <table align=center width=900px>
+              <tr>
+                <center>
+                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/demo_trajs/tortoise_traj_concat.mp4'></video>
+              </center>
+              </tr>
+              <tr>
+                <center>
+                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/demo_trajs/kite-surf_traj_concat.mp4'></video>
+              </center>
+              </tr>
+
+              </table>
+            </div>
+            
+            <div class="item">
+              <table align=center width=900px>
+              <tr>
+                <td>
+                  <center>
+                    <video class='round' autoplay muted loop playsinline style='height:240px' src='resources/dense_videos/input_10fps/birthcake.mp4'></video>
+                  </center>
+                </td>
+                <td>
+                  <center>
+                    <video class='round' autoplay muted loop playsinline style='height:240px' src='resources/dense_videos/ours/birthcake.mp4'></video>
+                  </center>
+                </td>
+              </tr>
+              <tr>
+
+                <td>
+                  <center>
+                    <video class='round' autoplay muted loop playsinline style='height:240px' src='resources/dense_videos/input_10fps/yellow-duck.mp4'></video>
+                  </center>
+                </td>
+                <td>
+                  <center>
+                    <video class='round' autoplay muted loop playsinline style='height:240px' src='resources/dense_videos/ours/yellow-duck.mp4'></video>
+                  </center>
+                </td>
+              </tr>
+
+              </table>
+            </div>
+
+
+            <div class="item">
+              <table align=center width=900px>
+                <tr>
+                  <td>
+                    <center>
+                      <video class='round' autoplay muted loop playsinline style='height:240px' src='resources/dense_videos/input_10fps/tortoise.mp4'></video>
+                    </center>
+                  </td>
+                  <td>
+                    <center>
+                      <video class='round' autoplay muted loop playsinline style='height:240px' src='resources/dense_videos/ours/tortoise.mp4'></video>
+                    </center>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <center>
+                      <video class='round' autoplay muted loop playsinline style='height:240px' src='resources/dense_videos/input_10fps/tortoise_swim.mp4'></video>
+                    </center>
+                  </td>
+                  <td>
+                    <center>
+                      <video class='round' autoplay muted loop playsinline style='height:240px' src='resources/dense_videos/ours/tortoise_swim.mp4'></video>
+                    </center>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+
+            <div class="item">
+              <table align=center width=900px>
+                <tr>
+                  <td>
+                    <center>
+                      <video class='round' autoplay muted loop playsinline style='height:240px' src='resources/dense_videos/input_10fps/dreureka_robot.mp4'></video>
+                    </center>
+                  </td>
+                  <td>
+                    <center>
+                      <video class='round' autoplay muted loop playsinline style='height:240px' src='resources/dense_videos/ours/dreureka_robot.mp4'></video>
+                    </center>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <center>
+                      <video class='round' autoplay muted loop playsinline style='height:240px' src='resources/dense_videos/input_10fps/robot_arm.mp4'></video>
+                    </center>
+                  </td>
+                  <td>
+                    <center>
+                      <video class='round' autoplay muted loop playsinline style='height:240px' src='resources/dense_videos/ours/robot_arm.mp4'></video>
+                    </center>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+
+        </div>
+  </div>
+
+  <div class="content">
+    <h2 style="text-align:left;">Non-rigid Structure from motion</h2>
+    <center>
+      <iframe
+        width="800px" height="400px" src="https://snap-research.github.io/DELTA/build/?playbackPath=https://snap-research.github.io/DELTA/resources/viser_records/recording_car-roundabout.viser&initDistanceScale=0.3&initHeightOffset=0.1">
+      </iframe>
+    </center>
+
+    <br>
+
+    We first densely track pixels across multiple keyframes in the video to obtain pairwise correspondences. 
+    Using these correspondences, we jointly estimate per-keyframe depth maps and camera poses through the Global Alignment in 
+    <a href="https://dust3r.europe.naverlabs.com/">DUSt3R</a> and <a href="https://monst3r-project.github.io/">MonST3R</a>.
+  </div>
+
+  </div>
+
+  <div class="content">
+    <h2 style="text-align:left;">Consistent video editting in 3D space</h2>
+    <center>
+      <div class="video-container">
+      <video class='round' autoplay muted loop playsinline style='height:260px' src='resources/edit_videos/butterfly_edit_concat.mp4'></video>
+      <!-- <div class="hover-text">A hamster wearing virtual reality headsets is a DJ in a disco.</div> -->
+      </div>
+    </center>
+
+    <br>
+  
+    <center>
+      <div class="video-container">
+      <video class='round' autoplay muted loop playsinline style='height:260px' src='resources/edit_videos/rollerblade_edit_concat.mp4'></video>
+      <!-- <div class="hover-text">A hamster wearing virtual reality headsets is a DJ in a disco.</div> -->
+      </div>
+    </center>
+
+    <br>
+  
+    <center>
+      <div class="video-container">
+      <video class='round' autoplay muted loop playsinline style='height:260px' src='resources/edit_videos/scoccerball_edit_concat.mp4'></video>
+      <!-- <div class="hover-text">A hamster wearing virtual reality headsets is a DJ in a disco.</div> -->
+      </div>
+    </center>
+
+  </div>
+
+  <div class="content">
+    <h2 style="text-align:left;">Comparison with prior work</h2>
+    <div>
+      <h3 class="title is-3"> Click <a href="compare_dense.html">here</a> for comparison with <a href="https://henry123-boy.github.io/SpaTracker/">SceneTracker</a> and <a href="https://henry123-boy.github.io/SpaTracker/">SpatialTracker</a> on 3D dense tracking.</h3>
+      <h3 class="title is-3"> Click <a href="compare_spatracker_tapvid3d.html">here</a> for comparison with <a href="https://henry123-boy.github.io/SpaTracker/">SpatialTracker</a> on the <a href="https://tapvid3d.github.io/">TAP-Vid3D</a> benchmark.</h3>
+      <h3 class="title is-3"> Click <a href="pose_est.html">here</a> for qualitative results of pose estimation.</h3>
+      <h3 class="title is-3"> More quantitative results can be found in our paper </h3>
+    </div>
+  </div>
+
+
+<footer class="footer">
+  <div class="content">
+    <p>
+      <strong>Acknowledgements:</strong> We borrow this template from <a href="https://monst3r-project.github.io/">MonST3R</a> and <a href="https://snap-research.github.io/4Real/">4Real</a>. 
+      The tracking visualization is inspired by <a href="https://co-tracker.github.io/">CoTracker</a>. The camera pose visualization tool is borrowed from <a href="https://monst3r-project.github.io/">MonST3R</a>. 
+      We sincerely thank the authors for publishing the source code.
+      <!-- This website is built using the template of <a href="https://snap-research.github.io/4Real/">4Real</a> and <a href="https://monst3r-project.github.io/">MonST3R</a>. -->
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Get the video element
+  var video = document.getElementById("short_video");
+
+  // Set the loop attribute to ensure continuous looping
+  video.loop = true;
+
+  // Set the playback range between frames 0 and 100
+  var startFrame = 0;
+  var endFrame = 1;
+
+  // Listen for the "timeupdate" event to continuously check the playback position
+  video.addEventListener("timeupdate", function() {
+      // Check if the current time is beyond the specified range
+      if (video.currentTime > endFrame) {
+          // Set the playback position back to the start frame
+          video.currentTime = startFrame;
+      }
+  });
+</script>
+
+</body>
+</html>

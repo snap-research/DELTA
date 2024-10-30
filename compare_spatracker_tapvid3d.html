@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta name="description"
+              content="This is the supplementary webpage for ICLR 2025 submission -- TAPE3D.">
+        <meta name="keywords" content="Dense 3D Tracking, 2D Tracking, Point Tracking">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TAPE3D</title>
+      
+        <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+              rel="stylesheet">
+      
+        <link rel="stylesheet" href="./static/css/bulma.min.css">
+        <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+        <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+        <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <link rel="stylesheet" href="./static/css/index.css">
+      
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      
+        <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+      
+        <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/> -->
+      
+      
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer src="./static/js/fontawesome.all.min.js"></script>
+        <script src="./static/js/bulma-carousel.min.js"></script>
+        <script src="./static/js/bulma-slider.min.js"></script>
+        <script src="./static/js/index.js"></script> -->
+      
+        <script defer src="./static/js/fontawesome.all.min.js"></script>
+        <script src="./static/js/index.js"></script>
+      
+      
+      
+        <style>
+          .artistic {
+              font-family: 'Lobster', cursive; /* Example of a custom artistic font */
+              color: #ff6347; /* Tomato color */
+              font-size: 2em; /* Increase the size */
+              text-shadow: 2px 2px 4px #000000; /* Add a shadow for effect */
+          }
+          .artistic2 {
+            font-family: 'Lobster', cursive; /* Example of a custom artistic font */
+            color: #7847ff; /* Tomato color */
+            font-size: 2em; /* Increase the size */
+            text-shadow: 2px 2px 4px #000000; /* Add a shadow for effect */
+        }
+      
+          /* General styles for the heading */
+          .title.is-1.publication-title {
+              font-family: Arial, sans-serif;
+              font-size: 2em;
+              color: #333;
+          }
+      
+          .publication-links {
+            font-size: 32px; /* Set your desired font size here */
+        }
+      
+        .gif-container {
+          position: relative;
+          display: inline-block;
+        }
+        .gif-container img {
+            display: block;
+        }
+        .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7); /* semi-transparent background */
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none; /* so the text itself doesn't interfere with the hover */
+        }
+        .gif-container:hover .hover-text {
+            opacity: 1;
+        }
+      
+        .content.has-text-justified {
+          max-width: 1000px; /* Set your desired max width here */
+          margin: 0 auto; /* Center the div within its container */
+      }
+      
+      .video-container {
+        position: relative;
+        display: inline-block;
+      }
+      .video-container video {
+          display: block;
+      }
+      .hover-text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: rgba(0, 0, 0, 0.7); /* semi-transparent background */
+          color: white;
+          padding: 10px;
+          border-radius: 5px;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          pointer-events: none; /* so the text itself doesn't interfere with the hover */
+      }
+      .video-container:hover .hover-text {
+          opacity: 1;
+      }
+      
+      
+      
+        .flipped-video {
+            transform: scaleX(-1); /* Flips the video horizontally */
+        }
+      
+      
+      </style>
+      
+      </head>
+<body>
+
+    <section>
+        <div>
+          <center><h3 class="title is-3">Compare with <a href="https://henry123-boy.github.io/SpaTracker/">SpatialTracker</a> on the <a href="https://tapvid3d.github.io/">TAP-Vid3D</a> benchmark.  
+            <!-- Click <a href="comparison/4dfy.html">here</a> for complete comparison</h3></center> -->
+            <p><span style="color:red;">Red</span>: groundtruth, <span style="color:green;">Green</span>: prediction</p>
+          <br>
+        </div>
+      
+      
+      <table align=center width=1250px>
+        <tr>
+          <td>
+            <center>
+              <b>Ours</b> 
+            </center>
+          </td>
+          <td>
+            <center>
+              <b>SpaTracker</b> 
+            </center>
+          </td>
+          <!-- <td>
+            <center>
+              Ours
+            </center>
+          </td>
+          <td>
+            <center>
+              4Dfy
+            </center>
+          </td> -->
+        </tr>
+      
+        <tr>
+      
+          <td>
+            <center>
+              <video class='round' autoplay muted loop playsinline style='width:600px' src='./resources/tapvid3d_sparse/ours/basketball_20.mp4'></video>
+            </center>
+          </td>
+      
+          <td>
+            <center>
+              <video class='round' autoplay muted loop playsinline style='width:600px' src='./resources/tapvid3d_sparse/spatracker/basketball_20.mp4'></video>
+            </center>
+          </td>
+        </tr>
+      
+        <tr>
+      
+          <td>
+            <center>
+              <video class='round' autoplay muted loop playsinline style='width:600px' src='./resources/tapvid3d_sparse/ours/tapvid3d_10876852935525353526_1640_000_1660_000_2_H7txZoV9099pUCGqWjv2mQ.mp4'></video>
+            </center>
+          </td>
+      
+          <td>
+            <center>
+              <video class='round' autoplay muted loop playsinline style='width:600px' src='./resources/tapvid3d_sparse/spatracker/tapvid3d_10876852935525353526_1640_000_1660_000_2_H7txZoV9099pUCGqWjv2mQ.mp4'></video>
+            </center>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <center>
+              <video class='round' autoplay muted loop playsinline style='width:600px' src='./resources/tapvid3d_sparse/ours/tapvid3d_6638427309837298695_220_000_240_000_1_SbPukwTCEiap4DzMUklocw.mp4'></video>
+            </center>
+          </td>
+      
+          <td>
+            <center>
+              <video class='round' autoplay muted loop playsinline style='width:600px' src='./resources/tapvid3d_sparse/spatracker/tapvid3d_6638427309837298695_220_000_240_000_1_SbPukwTCEiap4DzMUklocw.mp4'></video>
+            </center>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <center>
+              <video class='round' autoplay muted loop playsinline style='width:600px' src='./resources/tapvid3d_sparse/ours/tapvid3d_12956664801249730713_2840_000_2860_000_2_dtmqCN3-JhK9Un7gCqs3Ug.mp4'></video>
+            </center>
+          </td>
+      
+          <td>
+            <center>
+              <video class='round' autoplay muted loop playsinline style='width:600px' src='./resources/tapvid3d_sparse/spatracker/tapvid3d_12956664801249730713_2840_000_2860_000_2_dtmqCN3-JhK9Un7gCqs3Ug.mp4'></video>
+            </center>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <center>
+              <video class='round' autoplay muted loop playsinline style='width:600px' src='./resources/tapvid3d_sparse/ours/Apartment_release_multiuser_cook_seq118_8.mp4'></video>
+            </center>
+          </td>
+      
+          <td>
+            <center>
+              <video class='round' autoplay muted loop playsinline style='width:600px' src='./resources/tapvid3d_sparse/spatracker/Apartment_release_multiuser_cook_seq118_8.mp4'></video>
+            </center>
+          </td>
+        </tr>
+      
+        <tr>
+          <td>
+            <center>
+              <video class='round' autoplay muted loop playsinline style='width:600px' src='./resources/tapvid3d_sparse/ours/Lite_release_recognition_WoodenBoxSmall_seq033_1.mp4'></video>
+            </center>
+          </td>
+      
+          <td>
+            <center>
+              <video class='round' autoplay muted loop playsinline style='width:600px' src='./resources/tapvid3d_sparse/spatracker/Lite_release_recognition_WoodenBoxSmall_seq033_1.mp4'></video>
+            </center>
+          </td>
+        </tr>
+          
+      </table>
+      </section>
+
+
+  
+
+<script>
+  // Get the video element
+  var video = document.getElementById("short_video");
+
+  // Set the loop attribute to ensure continuous looping
+  video.loop = true;
+
+  // Set the playback range between frames 0 and 100
+  var startFrame = 0;
+  var endFrame = 1;
+
+  // Listen for the "timeupdate" event to continuously check the playback position
+  video.addEventListener("timeupdate", function() {
+      // Check if the current time is beyond the specified range
+      if (video.currentTime > endFrame) {
+          // Set the playback position back to the start frame
+          video.currentTime = startFrame;
+      }
+  });
+</script>
+
+</body>
+</html>
+
