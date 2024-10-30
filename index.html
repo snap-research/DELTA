@@ -10,7 +10,7 @@
   <!-- <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css"> -->
-  
+
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -108,7 +108,7 @@
     height: 30px;
   }
 </style>
-  
+
 </head>
 
 <body>
@@ -117,7 +117,7 @@
       <!-- <img src="./icons/demon_logo_transparent.png" alt="D3Mon Icon" style="width: 48px; vertical-align: middle;"> -->
       <!-- <strong><span style="color:rgb(255, 195, 21);">DELTA:</span> Dense Long-range 3D Tracking</strong> -->
       <strong>DELTA: Dense Efficient Long-range <br> 3D Tracking for Any video</strong>
-    </h1>    
+    </h1>
     <p id="authors">
       <span>
         <a href="https://ngoductuanlhp.github.io//">Tuan Duc Ngo<sup>1,2</sup></a>
@@ -142,9 +142,9 @@
       </span>
       <br>
       <span class="institution">
-        <a href="https://research.snap.com/"><sup>1</sup> Snap Inc</a> 
+        <a href="https://research.snap.com/"><sup>1</sup> Snap Inc</a>
         <a href="https://www.cics.umass.edu/"><sup>2</sup> UMass Amherst</a>
-        <a href="https://www.ece.tuc.gr/en/home"><sup>3</sup> TU Crete</a> 
+        <a href="https://www.ece.tuc.gr/en/home"><sup>3</sup> TU Crete</a>
         <a href="https://mitibmwatsonailab.mit.edu/"><sup>4</sup> MIT-IBM Watson AI Lab</a>
       </span>
     </p>
@@ -165,15 +165,15 @@
       <video class='round' autoplay muted loop playsinline style='width: 800px' src='resources/demo_trajs/car-roundabout_traj_concat.mp4'></video>
       </div>
     </center>
-    
+
     <br>
-  
+
     <center>
       <div class="video-container">
       <video class='round' autoplay muted loop playsinline style='width: 800px' src='resources/demo_trajs/butterfly_traj_concat.mp4'></video>
       </div>
     </center>
-    
+
     <br>
 
     <center>
@@ -181,7 +181,7 @@
       <video class='round' autoplay muted loop playsinline style='width: 800px' src='resources/demo_trajs/tortoise_swim.mp4'></video>
       </div>
     </center>
-    
+
     <br>
 
     <center>
@@ -189,17 +189,17 @@
       <video class='round' autoplay muted loop playsinline style='width: 800px' src='resources/demo_trajs/yellow-duck.mp4'></video>
       </div>
     </center>
-    
+
 
     <a style="text-align:center">
-      <p> 
+      <p>
         <center>
-          </strong><strong>DELTA</strong> captures <strong>dense, 3D, long-range</strong> trajectories from casual in-the-wild videos in a <strong>feed-forward</strong> manner. 
+          </strong><strong>DELTA</strong> captures <strong>dense, 3D, long-range</strong> trajectories from casual in-the-wild videos in a <strong>feed-forward</strong> manner.
         </center>
       </p>
     </a>
 
-    
+
   </div>
 
 
@@ -210,23 +210,23 @@
     </video>
   </div> -->
 
-  
+
 
   <div class="content">
     <h2 style="text-align:left;"><strong>Abstract</strong></h2>
     <font size="-0.">
       <p>
-          Tracking dense 3D motion from monocular videos remains challenging, particularly 
-          when aiming for pixel-level precision over long sequences. We introduce DELTA, 
-          a novel method that efficiently tracks every pixel in 3D space, enabling accurate 
+          Tracking dense 3D motion from monocular videos remains challenging, particularly
+          when aiming for pixel-level precision over long sequences. We introduce DELTA,
+          a novel method that efficiently tracks every pixel in 3D space, enabling accurate
           motion estimation across entire videos. Our approach leverages a joint
           global-local attention mechanism for reduced-resolution tracking, followed by a
-          transformer-based upsampler to achieve high-resolution predictions. Unlike existing 
+          transformer-based upsampler to achieve high-resolution predictions. Unlike existing
           methods, which are limited by computational inefficiency or sparse tracking,
           DELTA delivers dense 3D tracking at scale, running over 8x faster than
           previous methods while achieving state-of-the-art accuracy. Furthermore, we explore
           the impact of depth representation on tracking performance and identify
-          log-depth as the optimal choice. Extensive experiments demonstrate the superiority 
+          log-depth as the optimal choice. Extensive experiments demonstrate the superiority
           of DELTA on multiple benchmarks, achieving new state-of-the-art results in
           both 2D and 3D dense tracking tasks. Our method provides a robust solution for
           applications requiring fine-grained, long-term motion tracking in 3D space.
@@ -239,7 +239,7 @@
     <img class="summary-img" src="./resources/combined.png" style="width:95%;margin-bottom: -10px;">
     <br>
     <p> Existing motion prediction methods struggle with short-term, sparse predictions and often fail to deliver accurate 3D motion estimations while optimization-based approaches require substantial time to process a single video.
-      We are the first method capable of <strong>efficiently</strong> tracking <strong>every pixel</strong> in <strong>3D space</strong> over <strong>hundreds of frames</strong> from monocular videos, and achieves 
+      We are the first method capable of <strong>efficiently</strong> tracking <strong>every pixel</strong> in <strong>3D space</strong> over <strong>hundreds of frames</strong> from monocular videos, and achieves
       <strong>state-of-the-art accuracy</strong> on 3D tracking benchmarks.
     </p>
   </div>
@@ -302,7 +302,7 @@
 
               </table>
             </div>
-            
+
             <div class="item">
               <table align=center width=900px>
               <tr>
@@ -416,18 +416,14 @@
     <br>
     <center>
       <iframe
-
-        width="800px" height="400px" src="https://rsrd-anonymous.github.io/build/?playbackPath=https://snap-research.github.io/DELTA/resources/viser_records/recording_car-roundabout.viser&initDistanceScale=0.3&initHeightOffset=0.1">
-
-        
-        <!-- width="800px" height="400px" src="https://snap-research.github.io/DELTA/build/?playbackPath=https://snap-research.github.io/DELTA/resources/viser_records/recording_car-roundabout.viser&initDistanceScale=0.3&initHeightOffset=0.1"> -->
+        width="800px" height="400px" src="https://rsrd-anonymous.github.io/DELTA/build/?playbackPath=https://snap-research.github.io/DELTA/resources/viser_records/recording_car-roundabout.viser&initDistanceScale=0.3&initHeightOffset=0.1">
       </iframe>
     </center>
 
     <br>
 
-    We first densely track pixels across multiple keyframes in the video to obtain pairwise correspondences. 
-    Using these correspondences, we jointly estimate per-keyframe depth maps and camera poses through the Global Alignment in 
+    We first densely track pixels across multiple keyframes in the video to obtain pairwise correspondences.
+    Using these correspondences, we jointly estimate per-keyframe depth maps and camera poses through the Global Alignment in
     <a href="https://dust3r.europe.naverlabs.com/">DUSt3R</a> and <a href="https://monst3r-project.github.io/">MonST3R</a>.
   </div>
 
@@ -444,7 +440,7 @@
     </center>
 
     <br>
-  
+
     <center>
       <div class="video-container">
       <video class='round' autoplay muted loop playsinline style='height:260px' src='resources/edit_videos/rollerblade_edit_concat.mp4'></video>
@@ -453,7 +449,7 @@
     </center>
 
     <br>
-  
+
     <center>
       <div class="video-container">
       <video class='round' autoplay muted loop playsinline style='height:260px' src='resources/edit_videos/scoccerball_edit_concat.mp4'></video>
@@ -478,9 +474,9 @@
 <footer class="footer">
   <div class="content">
     <p>
-      <strong>Acknowledgements:</strong> We borrow this template from <a href="https://monst3r-project.github.io/">MonST3R</a> and <a href="https://snap-research.github.io/4Real/">4Real</a>. 
-      The tracking visualization is inspired by <a href="https://co-tracker.github.io/">CoTracker</a>. The camera pose visualization tool is borrowed from <a href="https://monst3r-project.github.io/">MonST3R</a>. 
-      We sincerely thank the authors for publishing the source code.
+      <strong>Acknowledgements:</strong> We borrow this template from <a href="https://monst3r-project.github.io/">MonST3R</a> and <a href="https://snap-research.github.io/4Real/">4Real</a>.
+      The tracking visualization is inspired by <a href="https://co-tracker.github.io/">CoTracker</a>. The camera pose visualization tool is borrowed from <a href="https://monst3r-project.github.io/">MonST3R</a>.
+      We sincerely thank the authors for the open-source code.
       <!-- This website is built using the template of <a href="https://snap-research.github.io/4Real/">4Real</a> and <a href="https://monst3r-project.github.io/">MonST3R</a>. -->
     </p>
   </div>
