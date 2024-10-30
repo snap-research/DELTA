@@ -190,14 +190,10 @@
       </div>
     </center>
 
-
-    <a style="text-align:center">
-      <p>
-        <center>
-          </strong><strong>DELTA</strong> captures <strong>dense, 3D, long-range</strong> trajectories from casual in-the-wild videos in a <strong>feed-forward</strong> manner.
-        </center>
-      </p>
-    </a>
+    <br>
+    <center>
+      <h4></strong><strong>DELTA</strong> captures <strong>dense, long-range, 3D</strong> trajectories from casual videos in a <strong>feed-forward</strong> manner.</h4>
+    </center>
 
 
   </div>
@@ -214,7 +210,7 @@
 
   <div class="content">
     <h2 style="text-align:left;"><strong>Abstract</strong></h2>
-    <font size="-0.">
+    <!-- <font size="-0."> -->
       <p>
           Tracking dense 3D motion from monocular videos remains challenging, particularly
           when aiming for pixel-level precision over long sequences. We introduce DELTA,
@@ -231,7 +227,7 @@
           both 2D and 3D dense tracking tasks. Our method provides a robust solution for
           applications requiring fine-grained, long-term motion tracking in 3D space.
     </p>
-  </font>
+  <!-- </font> -->
   </div>
 
   <div class="content">
@@ -260,7 +256,7 @@
 
   <div class="content">
     <!-- <h2 style="text-align:left;">Dense 3D Tracking in synthetic and in-the-wild videos</h2> -->
-    <h2 style="text-align:left;"><strong>More results</strong></h2>
+    <h2 style="text-align:left;"><strong>More qualitative results</strong></h2>
     <br>
         <div id="myCarousel" class="carousel slide">
           <!-- Indicators -->
@@ -405,14 +401,39 @@
             <span class="glyphicon glyphicon-chevron-right"></span>
             <span class="sr-only">Next</span>
           </a>
-
+        
         </div>
+        <br>
+        
+  </div>
+
+  <div class="content">
+    <h2 style="text-align:left;"><strong>Comparison with previous work</strong></h2>
+    <br>
+    <tr>
+      <center>
+        <video class='round' autoplay muted loop playsinline style='height:120px' src='resources/dense_videos/concat/car-roundabout_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+      </center>
+    </tr>
+
+    <br>
+
+    <tr>
+      <center>
+        <video class='round' autoplay muted loop playsinline style='height:120px' src='resources/dense_videos/concat/rollerblade_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+      </center>
+    </tr>
+
+    <br>
+    <h4 class="title is-3">
+      More results of 3D dense tracking can be found <a href="compare_dense.html">here</a>.
+    </h4>
   </div>
 
   <!-- width="800px" height="400px" src="http://localhost:8000/build/?playbackPath=http://localhost:8000/resources/viser_records/recording_car-roundabout.viser&initDistanceScale=0.3&initHeightOffset=0.1"> -->
   <!-- https://rsrd-anonymous.github.io -->
   <div class="content">
-    <h2 style="text-align:left;"><strong>Non-rigid Structure from motion</strong></h2>
+    <h2 style="text-align:left;"><strong>Application: Non-rigid structure from motion</strong></h2>
     <br>
     <center>
       <iframe
@@ -424,13 +445,17 @@
 
     We first densely track pixels across multiple keyframes in the video to obtain pairwise correspondences.
     Using these correspondences, we jointly estimate per-keyframe depth maps and camera poses through the Global Alignment in
-    <a href="https://dust3r.europe.naverlabs.com/">DUSt3R</a> and <a href="https://monst3r-project.github.io/">MonST3R</a>.
+    <a href="https://dust3r.europe.naverlabs.com/">DUSt3R</a> and <a href="https://monst3r-project.github.io/">MonST3R</a>. 
+    
+    <h4 class="title is-3">
+      More results of video pose estimation can be found <a href="pose_est.html">here</a>.
+    </h4>
+    <!-- More results can be found <a href="pose_est.html">here</a>. -->
   </div>
 
-  </div>
 
   <div class="content">
-    <h2 style="text-align:left;"><strong>Consistent video editting in 3D space</strong></h2>
+    <h2 style="text-align:left;"><strong>Application: Consistent video editting in 3D space</strong></h2>
     <br>
     <center>
       <div class="video-container">
@@ -460,12 +485,12 @@
   </div>
 
   <div class="content">
-    <h2 style="text-align:left;"><strong>Comparison with prior work</strong></h2>
+    <!-- <h2 style="text-align:left;"><strong>Comparison with prior work</strong></h2> -->
     <div>
       <h4 class="title is-3"> Click <a href="compare_dense.html">here</a> for comparison with <a href="https://henry123-boy.github.io/SpaTracker/">SceneTracker</a> and <a href="https://henry123-boy.github.io/SpaTracker/">SpatialTracker</a> on 3D dense tracking.</h4>
       <h4 class="title is-3"> Click <a href="compare_spatracker_tapvid3d.html">here</a> for comparison with <a href="https://henry123-boy.github.io/SpaTracker/">SpatialTracker</a> on the <a href="https://tapvid3d.github.io/">TAP-Vid3D</a> benchmark.</h4>
-      <h4 class="title is-3"> Click <a href="pose_est.html">here</a> for qualitative results of pose estimation.</h4>
-      <h4 class="title is-3"> More quantitative results can be found in our paper </h4>
+      <!-- <h4 class="title is-3"> Click <a href="pose_est.html">here</a> for qualitative results of pose estimation.</h4> -->
+      <h4 class="title is-3"> Detailed quantitative results can be found in our <a href="files\paper.pdf">paper</a>.</h4>
       <!-- <p> More quantitative results can be found in our paper </p> -->
     </div>
   </div>
