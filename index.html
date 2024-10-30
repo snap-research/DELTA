@@ -7,9 +7,10 @@
   <!-- <link rel="icon" href="icons/demon_logo_transparent.png" type="image/png"> -->
   <!-- <link rel="stylesheet" href="./static/css/bulma-carousel.min.css"> -->
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <!-- <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css"> -->
+  
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -112,10 +113,10 @@
 
 <body>
   <div class="content">
-    <h1 style="line-height: 0.75;">
+    <h1 style="line-height: 1.2;">
       <!-- <img src="./icons/demon_logo_transparent.png" alt="D3Mon Icon" style="width: 48px; vertical-align: middle;"> -->
       <!-- <strong><span style="color:rgb(255, 195, 21);">DELTA:</span> Dense Long-range 3D Tracking</strong> -->
-      <strong>DELTA: Dense Efficient Long-range <br><br> 3D Tracking for Any video</strong>
+      <strong>DELTA: Dense Efficient Long-range <br> 3D Tracking for Any video</strong>
     </h1>    
     <p id="authors">
       <span>
@@ -130,6 +131,7 @@
       <span>
         <a href="https://kalo-ai.github.io/">Evangelos Kalogerakis<sup>2,3</sup></a>
       </span>
+      <br>
       <span>
         <a href="http://www.stulyakov.com/">Sergey Tulyakov<sup>1</sup></a>
       </span>
@@ -211,7 +213,7 @@
   
 
   <div class="content">
-    <h2 style="text-align:left;">Abstract</h2>
+    <h2 style="text-align:left;"><strong>Abstract</strong></h2>
     <font size="-0.">
       <p>
           Tracking dense 3D motion from monocular videos remains challenging, particularly 
@@ -233,7 +235,7 @@
   </div>
 
   <div class="content">
-    <h2 style="text-align:left;">Motivation</h2>
+    <h2 style="text-align:left;"><strong>Motivation</strong></h2>
     <img class="summary-img" src="./resources/combined.png" style="width:95%;margin-bottom: -10px;">
     <br>
     <p> Existing motion prediction methods struggle with short-term, sparse predictions and often fail to deliver accurate 3D motion estimations while optimization-based approaches require substantial time to process a single video.
@@ -243,7 +245,8 @@
   </div>
 
   <div class="content">
-    <h2 style="text-align:left;">Method</h2>
+    <h2 style="text-align:left;"><strong>Method</strong></h2>
+    <br>
     <img class="summary-img" src="./resources/arch.png" style="width:100%;margin-bottom: -10px;">
     <br>
     <br>
@@ -257,7 +260,8 @@
 
   <div class="content">
     <!-- <h2 style="text-align:left;">Dense 3D Tracking in synthetic and in-the-wild videos</h2> -->
-    <h2 style="text-align:left;">More results</h2>
+    <h2 style="text-align:left;"><strong>More results</strong></h2>
+    <br>
         <div id="myCarousel" class="carousel slide">
           <!-- Indicators -->
 
@@ -406,7 +410,8 @@
   </div>
 
   <div class="content">
-    <h2 style="text-align:left;">Non-rigid Structure from motion</h2>
+    <h2 style="text-align:left;"><strong>Non-rigid Structure from motion</strong></h2>
+    <br>
     <center>
       <iframe
         width="800px" height="400px" src="http://localhost:8000/build/?playbackPath=http://localhost:8000/resources/viser_records/recording_car-roundabout.viser&initDistanceScale=0.3&initHeightOffset=0.1">
@@ -425,7 +430,8 @@
   </div>
 
   <div class="content">
-    <h2 style="text-align:left;">Consistent video editting in 3D space</h2>
+    <h2 style="text-align:left;"><strong>Consistent video editting in 3D space</strong></h2>
+    <br>
     <center>
       <div class="video-container">
       <video class='round' autoplay muted loop playsinline style='height:260px' src='resources/edit_videos/butterfly_edit_concat.mp4'></video>
@@ -454,12 +460,13 @@
   </div>
 
   <div class="content">
-    <h2 style="text-align:left;">Comparison with prior work</h2>
+    <h2 style="text-align:left;"><strong>Comparison with prior work</strong></h2>
     <div>
-      <h3 class="title is-3"> Click <a href="compare_dense.html">here</a> for comparison with <a href="https://henry123-boy.github.io/SpaTracker/">SceneTracker</a> and <a href="https://henry123-boy.github.io/SpaTracker/">SpatialTracker</a> on 3D dense tracking.</h3>
-      <h3 class="title is-3"> Click <a href="compare_spatracker_tapvid3d.html">here</a> for comparison with <a href="https://henry123-boy.github.io/SpaTracker/">SpatialTracker</a> on the <a href="https://tapvid3d.github.io/">TAP-Vid3D</a> benchmark.</h3>
-      <h3 class="title is-3"> Click <a href="pose_est.html">here</a> for qualitative results of pose estimation.</h3>
-      <h3 class="title is-3"> More quantitative results can be found in our paper </h3>
+      <h4 class="title is-3"> Click <a href="compare_dense.html">here</a> for comparison with <a href="https://henry123-boy.github.io/SpaTracker/">SceneTracker</a> and <a href="https://henry123-boy.github.io/SpaTracker/">SpatialTracker</a> on 3D dense tracking.</h4>
+      <h4 class="title is-3"> Click <a href="compare_spatracker_tapvid3d.html">here</a> for comparison with <a href="https://henry123-boy.github.io/SpaTracker/">SpatialTracker</a> on the <a href="https://tapvid3d.github.io/">TAP-Vid3D</a> benchmark.</h4>
+      <h4 class="title is-3"> Click <a href="pose_est.html">here</a> for qualitative results of pose estimation.</h4>
+      <h4 class="title is-3"> More quantitative results can be found in our paper </h4>
+      <!-- <p> More quantitative results can be found in our paper </p> -->
     </div>
   </div>
 
