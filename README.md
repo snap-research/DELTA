@@ -1,4 +1,3 @@
-# Tape3D: Track All Pixels Efficiently in 3D
+# DELTA
 
-Please open the ``index.html`` with browser to enjoy our cool results.
-
+ Dense Efficient Long-range 3D Tracking for Any video
