@@ -1,6 +1,6 @@
 @article{ngo2024delta,
   author    = {Ngo, Tuan Duc and Zhuang, Peiye and Gan, Chuang and Kalogerakis, Evangelos and Tulyakov, Sergey and Lee, Hsin-Ying and Wang, Chaoyang},
   title     = {DELTA: Dense Efficient Long-range 3D Tracking for Any video},
-  journal   = {arXiv preprint arxiv:2411},
+  journal   = {arXiv preprint arXiv:2410.24211},
   year      = {2024}
 }
