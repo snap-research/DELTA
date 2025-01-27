@@ -146,18 +146,13 @@
         <a href="https://www.cics.umass.edu/"><sup>2</sup> UMass Amherst</a>
         <a href="https://www.ece.tuc.gr/en/home"><sup>3</sup> TU Crete</a>
       </span>
+      <br>
+      <span class="conference">ICLR 2025</span>
     </p>
 
-    <font size="+2">
-      <p style="text-align: center;">
-        <a href="files/paper.pdf" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="https://arxiv.org/abs/2410.24211" target="_blank">[Arxiv]</a> &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="#" target="_blank" onclick="return false;">[Code (soon)]</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="files/bibtex.txt" target="_blank">[BibTeX]</a>
-      </p>
-    </font>
-
     <br>
+
+    
 
     <center>
       <div class="video-container">
@@ -194,6 +189,14 @@
       <h4></strong><strong>DELTA</strong> captures <strong>dense, long-range, 3D</strong> trajectories from casual videos in a <strong>feed-forward</strong> manner.</h4>
     </center>
 
+    <font size="+2">
+      <p style="text-align: center;">
+        <a href="files/paper.pdf" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://arxiv.org/abs/2410.24211" target="_blank">[Arxiv]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/snap-research/DELTA_densetrack3d" target="_blank">[Code]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="files/bibtex.txt" target="_blank">[BibTeX]</a>
+      </p>
+    </font>
 
   </div>
 
@@ -407,7 +410,7 @@
   </div>
 
   <div class="content">
-    <h2 style="text-align:left;"><strong>Comparison with previous work</strong></h2>
+    <h2 style="text-align:left;"><strong>Comparison with 3D point trackers </strong></h2>
     <br>
     <tr>
       <center>
@@ -425,7 +428,63 @@
 
     <br>
     <h4 class="title is-3">
-      More results of 3D dense tracking can be found <a href="compare_dense.html">here</a>.
+      More results can be found <a href="compare_dense.html">here</a>.
+    </h4>
+  </div>
+
+  <div class="content">
+    <h2 style="text-align:left;"><strong>Comparison with 2D point trackers (lifted 3D with depth)</strong></h2>
+    <br>
+    <tr>
+      <center>
+        <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/dense_2d_videos/concat/car-roundabout_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+      </center>
+    </tr>
+
+    <br>
+
+    <tr>
+      <center>
+        <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/dense_2d_videos/concat/rollerblade_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+      </center>
+    </tr>
+
+    <br>
+    <h4 class="title is-3">
+      More results can be found <a href="compare_dense_lifted3d.html">here</a>.
+    </h4>
+  </div>
+
+  <div class="content">
+    <h2 style="text-align:left;"><strong>Occlusion problem when using 2D point trackers + Depth </strong></h2>
+    <br>
+
+    <p>Frontal view</p>
+    <tr>
+      <center>
+        <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/dense_2d_videos/concat/scoccerball_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+      </center>
+    </tr>
+
+    <br>
+
+    <p>Side view</p>
+
+    <tr>
+      <center>
+        <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/dense_2d_videos/concat/scoccerball_traj2_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+      </center>
+    </tr>
+    <h4 class="title is-3">
+      (Note that all of the methods use the same video depth input)
+    </h4>
+    <h4 class="title is-3">
+      The baseline (2D Tracker + Depth) struggles significantly with inconsistent video depth estimation, resulting in noticeable jittering effects. Additionally, it fails to accurately track objects during occlusion, as seen from the side view when the ball rolls behind the tree.
+    </h4>
+
+    <br>
+    <h4 class="title is-3">
+      More results can be found <a href="compare_dense_lifted3d_occ.html">here</a>.
     </h4>
   </div>
 

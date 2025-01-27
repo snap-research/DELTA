@@ -134,11 +134,8 @@
     <section>
 
         <div>
-          <center><h3 class="title is-3">Compare with <a href="https://henry123-boy.github.io/SpaTracker/">SpatialTracker</a>, <a href="https://arxiv.org/pdf/2403.19924">SceneTracker</a>, and the 3D version of <a href="https://16lemoing.github.io/dot/">DOT</a> on 3D dense tracking on in-the-wild videos.
+          <center><h3 class="title is-3">Occlusion problem when using 2D point trackers + Depth (<a href="https://co-tracker.github.io/">CoTracker</a> and <a href="https://ku-cvlab.github.io/locotrack/">LocoTrack</a> </strong>).
             <!-- Click <a href="comparison/4dfy.html">here</a> for complete comparison</h3></center> -->
-          </center>
-          <center>
-            The inference time (in minutes) are denoted on top of each video.
           </center>
           
         </div>
@@ -146,114 +143,77 @@
         <br>
         <br>
         <table align=center width=1250px>
-
+          <tr>
+            <center>
+              <p>Frontal view</p>
+              <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/dense_2d_videos/concat/scoccerball_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+            </center>
+          </tr>
+          
+          <tr>
+            <center>
+              <p>Side view</p>
+              <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/dense_2d_videos/concat/scoccerball_traj2_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+            </center>
+          </tr>
+          <br>
+          <br>
             <tr>
               <center>
-                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/dense_videos/concat/car-roundabout_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+                <p>Frontal view</p>
+                <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/dense_2d_videos/concat/horsejump-high_concat_compare.mp4' controls style="border: 5px solid black;"></video>
               </center>
             </tr>
             
-            <br>
-
             <tr>
               <center>
-                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/dense_videos/concat/soapbox_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+                <p>Side view</p>
+                <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/dense_2d_videos/concat/horsejump-high_traj1_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+              </center>
+            </tr>
+            <br>
+            <br>
+            <tr>
+              <center>
+                <p>Frontal view</p>
+                <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/dense_2d_videos/concat/stroller_concat_compare.mp4' controls style="border: 5px solid black;"></video>
               </center>
             </tr>
             
-            <br>
-
             <tr>
               <center>
-                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/dense_videos/concat/kite-surf_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+                <p>Side view</p>
+                <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/dense_2d_videos/concat/stroller_traj1_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+              </center>
+            </tr>
+            <br>
+            <br>
+            <tr>
+              <center>
+                <p>Frontal view</p>
+                <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/dense_2d_videos/concat/tortoise_concat_compare.mp4' controls style="border: 5px solid black;"></video>
               </center>
             </tr>
             
-            <br>
-          
             <tr>
               <center>
-                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/dense_videos/concat/horsejump-high_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+                <p>Side view</p>
+                <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/dense_2d_videos/concat/tortoise_traj1_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+              </center>
+            </tr>
+            <br>
+            <br>
+            <tr>
+              <center>
+                <p>Frontal view</p>
+                <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/dense_2d_videos/concat/robot_arm_concat_compare.mp4' controls style="border: 5px solid black;"></video>
               </center>
             </tr>
             
-            <br>
-          
             <tr>
               <center>
-                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/dense_videos/concat/rollerblade_concat_compare.mp4' controls style="border: 5px solid black;"></video>
-              </center>
-            </tr>
-            
-            <br>
-          
-            <tr>
-              <center>
-                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/dense_videos/concat/scoccerball_concat_compare.mp4' controls style="border: 5px solid black;"></video>
-              </center>
-            </tr>
-            
-            <br>
-          
-            <tr>
-              <center>
-                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/dense_videos/concat/stroller_concat_compare.mp4' controls style="border: 5px solid black;"></video>
-              </center>
-            </tr>
-            
-            <br>
-          
-            <tr>
-              <center>
-                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/dense_videos/concat/dog_concat_compare.mp4' controls style="border: 5px solid black;"></video>
-              </center>
-            </tr>
-            
-            <br>
-          
-            <tr>
-              <center>
-                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/dense_videos/concat/blackswan_concat_compare.mp4' controls style="border: 5px solid black;"></video>
-              </center>
-            </tr>
-            
-            <br>
-          
-            <tr>
-              <center>
-                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/dense_videos/concat/dance-twirl_concat_compare.mp4' controls style="border: 5px solid black;"></video>
-              </center>
-            </tr>
-          
-            <br>
-          
-            <tr>
-              <center>
-                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/dense_videos/concat/scooter-gray_concat_compare.mp4' controls style="border: 5px solid black;"></video>
-              </center>
-            </tr>
-            
-            <br>
-          
-            <tr>
-              <center>
-                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/dense_videos/concat/butterfly_concat_compare.mp4' controls style="border: 5px solid black;"></video>
-              </center>
-            </tr>
-            
-            <br>
-          
-            <tr>
-              <center>
-                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/dense_videos/concat/tortoise_concat_compare.mp4' controls style="border: 5px solid black;"></video>
-              </center>
-            </tr>
-          
-            <br>
-          
-            <tr>
-              <center>
-                <video class='round' autoplay muted loop playsinline style='height:200px' src='resources/dense_videos/concat/robot_arm_concat_compare.mp4' controls style="border: 5px solid black;"></video>
+                <p>Side view</p>
+                <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/dense_2d_videos/concat/robot_arm_traj1_concat_compare.mp4' controls style="border: 5px solid black;"></video>
               </center>
             </tr>
             
