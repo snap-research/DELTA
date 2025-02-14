@@ -501,7 +501,7 @@
 
     <br>
 
-    We first densely track pixels across multiple keyframes in the video to obtain pairwise correspondences.
+      We first densely track pixels across multiple keyframes in the video to obtain pairwise correspondences.
     Using these correspondences, we jointly estimate per-keyframe depth maps and camera poses through the Global Alignment in
     <a href="https://dust3r.europe.naverlabs.com/">DUSt3R</a> and <a href="https://monst3r-project.github.io/">MonST3R</a>. 
     
@@ -510,6 +510,31 @@
     </h4>
     <!-- More results can be found <a href="pose_est.html">here</a>. -->
   </div>
+
+  <div class="content">
+    <h2 style="text-align:left;"><strong>Application: Dynamic Reconstruction with Deformable Gaussian Splatting</strong></h2>
+    <br>
+    <center>
+      <div class="video-container">
+      <video class='round' autoplay muted loop playsinline style='height:180px' src='resources/recons4d/yellow-duck_edited.mp4'></video>
+      <!-- <div class="hover-text">A hamster wearing virtual reality headsets is a DJ in a disco.</div> -->
+      </div>
+    </center>
+
+    <br>
+
+    <center>
+      <div class="video-container">
+      <video class='round' autoplay muted loop playsinline style='height:160px' src='resources/recons4d/concat.mp4'></video>
+      <!-- <div class="hover-text">A hamster wearing virtual reality headsets is a DJ in a disco.</div> -->
+      </div>
+    </center>
+    
+    <br>
+    After densely tracking pixels across multiple keyframes and estimating camera poses, we initialize a static, pixel-aligned <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">3D gaussian splatting</a> representation. The Gaussians are then deformed along our tracked trajectories to a specific bullet time and rendered from novel viewpoints.
+    
+  </div>
+
 
 
   <div class="content">
